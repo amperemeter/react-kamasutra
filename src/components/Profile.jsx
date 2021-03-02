@@ -8,7 +8,7 @@ const Profile = () => {
          </div>
 
          <div>
-            avatar + desc
+            avatar + description
          </div>
 
          <div>
