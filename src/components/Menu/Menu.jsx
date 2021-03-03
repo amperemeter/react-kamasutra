@@ -1,9 +1,9 @@
 import React from "react"
-import './Menu.css'
+import classes from './Menu.module.css'
 
 const Menu = () => {
    return (
-      <nav className="app-menu">
+      <nav className={classes.app_menu}>
          <div>Profile</div>
          <div>Messages</div>
          <div>News</div>

@@ -1,10 +1,10 @@
 import React from "react"
-import './Header.css'
-import logo from '../logo.svg';
+import classes from './Header.module.css'
+import logo from '../../logo.svg'
 
 const Header = () => {
    return (
-      <header className="app-header">
+      <header className={classes.app_header}>
          <img src={logo} className="app-logo" alt="logo" />
       </header>
    )
