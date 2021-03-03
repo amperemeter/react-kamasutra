@@ -6,22 +6,3 @@
   grid-template-rows: 70px 1fr;
   grid-template-areas: "header header" "menu content"
 }
-
-.app-header {
-  grid-area: header;
-  background: green;
-}
-
-.app-header img {
-  width: 100px;
-}
-
-.app-menu {
-  grid-area: menu;
-  background: goldenrod;
-}
-
-.app-content {
-  grid-area: content;
-  background: lightsteelblue;
-}

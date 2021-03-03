@@ -1,0 +1,4 @@
+.app-menu {
+   grid-area: menu;
+   background: goldenrod;
+}

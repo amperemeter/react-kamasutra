@@ -1,0 +1,4 @@
+.app-content {
+   grid-area: content;
+   background: lightsteelblue;
+}
