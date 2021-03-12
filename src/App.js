@@ -5,15 +5,21 @@ import Menu from './components/Menu/Menu';
 import Profile from './components/Profile/Profile';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-function App() {
+function App(props) {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
         <Menu />
         <main className="app-content">
-          <Route path="/profile" component={Profile} />
-          <Route path="/dialogs" component={Dialogs} />
+          <Route
+            path="/profile"
+            render={() => <Profile state={props.state.profilePage} />}
+          />
+          <Route
+            path="/dialogs"
+            render={() => <Dialogs state={props.state.dialogsPage} />}
+          />
         </main>
       </div>
     </BrowserRouter>

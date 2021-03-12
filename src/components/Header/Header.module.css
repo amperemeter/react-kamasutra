@@ -1,6 +1,6 @@
 .app_header {
    grid-area: header;
-   background: green;
+   background: #003444;
 }
 
 .app_header img {

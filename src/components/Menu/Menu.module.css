@@ -1,7 +1,7 @@
 .app_menu {
    padding: 20px;
    grid-area: menu;
-   background: goldenrod;
+   background: #0494bb;
 }
 
 .item a {

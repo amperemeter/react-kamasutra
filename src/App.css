@@ -1,3 +1,7 @@
+body {
+  background: #f3e5c5;
+}
+
 .app-wrapper {
   max-width: 960px;
   margin: 0 auto;
@@ -9,5 +13,5 @@
 
 .app-content {
   grid-area: content;
-  background: lightsteelblue;
+  background: white;
 }
