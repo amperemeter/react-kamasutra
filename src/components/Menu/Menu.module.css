@@ -1,4 +1,14 @@
 .app_menu {
+   padding: 20px;
    grid-area: menu;
    background: goldenrod;
+}
+
+.item a {
+   color: white;
+   text-decoration: none;
+}
+
+.item a.active {
+   color: wheat;
 }
