@@ -1,5 +1,5 @@
 import './App.css';
-import Dialogs from './components/Messages/Messages';
+import Dialogs from './components/Dialogs/Dialogs';
 import Header from './components/Header/Header';
 import Menu from './components/Menu/Menu';
 import Profile from './components/Profile/Profile';
@@ -12,8 +12,8 @@ function App() {
         <Header />
         <Menu />
         <main className="app-content">
-          <Route path="/messages" component={Dialogs} />
           <Route path="/profile" component={Profile} />
+          <Route path="/dialogs" component={Dialogs} />
         </main>
       </div>
     </BrowserRouter>

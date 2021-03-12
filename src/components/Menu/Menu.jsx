@@ -9,15 +9,15 @@ const Menu = () => {
             <NavLink to="/profile" activeClassName={classes.active}>Profile</NavLink>
          </div>
          <div className={classes.item}>
-            <NavLink to="/messages" activeClassName={classes.active}>Messages</NavLink>
+            <NavLink to="/dialogs" activeClassName={classes.active}>Dialogs</NavLink>
          </div>
-         <div className={classes.item} activeClassName={classes.active}>
+         <div className={classes.item} >
             <div>News</div>
          </div>
-         <div className={classes.item} activeClassName={classes.active}>
+         <div className={classes.item} >
             <div>Music</div>
          </div>
-         <div className={classes.item} activeClassName={classes.active}>
+         <div className={classes.item}>
             <div>Settings</div>
          </div>
       </nav>
