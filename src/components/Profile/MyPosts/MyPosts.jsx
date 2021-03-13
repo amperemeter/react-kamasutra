@@ -9,14 +9,20 @@ const MyPosts = (props) => {
       <Post key={p.id} message={p.message} likesCount={p.likesCount} />
    );
 
+   let newPost = React.createRef();
+   let addPost = () => {
+      let text = newPost.current.value;
+      props.addPost(text);
+   }
+
    return (
       <div className={s.posts}>
          <h3>My posts</h3>
          <div>
-            <textarea cols="30" rows="10"></textarea>
+            <textarea ref={newPost}></textarea>
          </div>
          <div>
-            <button>Add post</button>
+            <button onClick={addPost}>Add post</button>
          </div>
          <div>
             New posts
