@@ -12,7 +12,6 @@ const MyPosts = (props) => {
    let newPost = React.createRef();
 
    let addPost = () => {
-      // debugger;
       props.addPost();
    }
 
