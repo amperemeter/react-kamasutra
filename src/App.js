@@ -21,7 +21,7 @@ function App(props) {
           />
           <Route
             path="/dialogs"
-            render={() => <Dialogs state={props.state.dialogsPage} />}
+            render={() => <Dialogs state={props.state.dialogsPage} store={props.store} />}
           />
         </main>
       </div>
