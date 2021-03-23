@@ -6,6 +6,8 @@ import Profile from './components/Profile/Profile';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 function App(props) {
+  console.log(props);
+
   return (
     <BrowserRouter>
       <div className="app-wrapper">

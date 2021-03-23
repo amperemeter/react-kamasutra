@@ -1,6 +1,6 @@
 import dialogsReducer from "./dialogs-reducer";
 import profileReducer from "./profile-reducer";
-import sidebarReducer from "./sidebar";
+import sidebarReducer from "./sidebar-reducer";
 
 let store = {
    _state: {
@@ -8,7 +8,7 @@ let store = {
          posts: [
             { id: 1, message: 'It\'s my first post', likesCount: 0 }
          ],
-         newPostText: 'Wow!',
+         newPostText: 'Wow!'
       },
       dialogsPage: {
          dialogs: [
@@ -37,7 +37,7 @@ let store = {
       this._state.sidebar = sidebarReducer(this._state.sidebar, action);
       this._callSubscriber(this._state);
    },
-   subscriber(observer) {
+   subscribe(observer) {
       this._callSubscriber = observer;
    }
 }
