@@ -6,7 +6,6 @@ import Profile from './components/Profile/Profile';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 function App(props) {
-  console.log(props);
 
   return (
     <BrowserRouter>
@@ -16,11 +15,11 @@ function App(props) {
         <main className="app-content">
           <Route
             path="/profile"
-            render={() => <Profile store={props.store} />}
+            render={() => <Profile />}
           />
           <Route
             path="/dialogs"
-            render={() => <DialogsContainer store={props.store} />}
+            render={() => <DialogsContainer />}
           />
         </main>
       </div>
