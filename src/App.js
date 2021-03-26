@@ -17,9 +17,15 @@ function App(props) {
             path="/profile"
             render={() => <Profile />}
           />
+
           <Route
             path="/dialogs"
             render={() => <DialogsContainer />}
+          />
+
+          <Route
+            path="/users"
+            render={() => <div>Users</div>}
           />
         </main>
       </div>
