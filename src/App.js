@@ -4,6 +4,7 @@ import Header from './components/Header/Header';
 import Menu from './components/Menu/Menu';
 import Profile from './components/Profile/Profile';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
+import UsersContainer from './components/Users/UsersContainer';
 
 function App(props) {
 
@@ -25,7 +26,7 @@ function App(props) {
 
           <Route
             path="/users"
-            render={() => <div>Users</div>}
+            render={() => <UsersContainer />}
           />
         </main>
       </div>

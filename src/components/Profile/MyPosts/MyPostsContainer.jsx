@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import MyPosts from "./MyPosts"
 
-let mapStateToPops = (state) => {
+let mapStateToProps = (state) => {
    return {
       posts: state.profilePage.posts,
       newPostText: state.profilePage.newPostText
@@ -22,6 +22,6 @@ let mapDispatchToProps = (dispatch) => {
    }
 }
 
-const MyPostsContainer = connect(mapStateToPops, mapDispatchToProps)(MyPosts);
+const MyPostsContainer = connect(mapStateToProps, mapDispatchToProps)(MyPosts);
 
 export default MyPostsContainer;
