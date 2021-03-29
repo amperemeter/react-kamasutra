@@ -1,11 +1,13 @@
 import React from "react"
-import s from './Post.module.css'
+import s from './Post.module.css';
+import userPhoto from '../../../../assets/images/avatar.png'
+
 
 const Post = (props) => {
 
    return (
       <div className={s.item}>
-         <img src="https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/suicide_squad_woman_avatar_joker-256.png" alt="" />
+         <img src={userPhoto} alt="" />
          <div>{props.message}</div>
          <div>
             <span>{props.likesCount}</span>
