@@ -13,3 +13,11 @@
    display: grid;
    grid-template-columns: 1fr 1fr;
 }
+
+.pages span {
+   cursor: pointer;
+}
+
+.selected {
+   font-weight: 700;
+}
