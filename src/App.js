@@ -15,7 +15,7 @@ function App(props) {
         <Menu />
         <main className="app-content">
           <Route
-            path="/profile"
+            path="/profile/:userId?"
             render={() => <ProfileContainer />}
           />
 
