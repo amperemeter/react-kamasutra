@@ -1,5 +1,5 @@
-import React from "react"
-import { NavLink } from "react-router-dom"
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 import s from './Menu.module.css'
 
 const Menu = () => {
@@ -27,4 +27,4 @@ const Menu = () => {
    )
 }
 
-export default Menu
+export default Menu;

@@ -1,6 +1,6 @@
-import { sendMessageCreator, updateNewMessageBodyCreator } from "../../redux/dialogs-reducer";
+import { sendMessageCreator, updateNewMessageBodyCreator } from '../../redux/dialogs-reducer';
 import { connect } from 'react-redux';
-import Dialogs from "./Dialogs";
+import Dialogs from './Dialogs';
 
 let mapStateToPops = (state) => {
    return {

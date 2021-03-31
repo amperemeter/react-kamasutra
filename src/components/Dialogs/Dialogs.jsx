@@ -1,7 +1,7 @@
-import React from "react";
-import DialogItem from "./DialogItem/DialogItem";
-import Messages from "./Messages/Messages";
-import s from "./Dialogs.module.css";
+import React from 'react';
+import DialogItem from './DialogItem/DialogItem';
+import Messages from './Messages/Messages';
+import s from './Dialogs.module.css';
 
 const Dialogs = (props) => {
    let state = props.dialogsPage;
@@ -53,4 +53,4 @@ const Dialogs = (props) => {
    )
 }
 
-export default Dialogs
+export default Dialogs;

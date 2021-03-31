@@ -1,17 +1,17 @@
 import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
-import Header from './components/Header/Header';
 import Menu from './components/Menu/Menu';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
+import HeaderContainer from './components/Header/HeaderContainer';
 
 function App(props) {
 
   return (
     <BrowserRouter>
       <div className="app-wrapper">
-        <Header />
+        <HeaderContainer />
         <Menu />
         <main className="app-content">
           <Route

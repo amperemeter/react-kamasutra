@@ -1,6 +1,6 @@
-import React from "react"
-import Post from "./Posts/Post"
-import s from './MyPosts.module.css'
+import React from 'react';
+import Post from './Posts/Post';
+import s from './MyPosts.module.css';
 
 const MyPosts = (props) => {
 
@@ -41,4 +41,4 @@ const MyPosts = (props) => {
    )
 }
 
-export default MyPosts
+export default MyPosts;

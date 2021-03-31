@@ -26,4 +26,4 @@ const ProfileInfo = (props) => {
    )
 }
 
-export default ProfileInfo
+export default ProfileInfo;

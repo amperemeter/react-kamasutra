@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Messages = (props) => {
    return (
@@ -6,4 +6,4 @@ const Messages = (props) => {
    )
 }
 
-export default Messages
+export default Messages;

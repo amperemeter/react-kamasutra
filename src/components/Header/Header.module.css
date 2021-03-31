@@ -1,8 +1,19 @@
 .app_header {
    grid-area: header;
    background: #003444;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
 }
 
 .app_header img {
    width: 100px;
+}
+
+.login_block {
+   padding: 20px;
+}
+
+.login_block * {
+   color: white;
 }

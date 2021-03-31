@@ -1,10 +1,10 @@
-import React from "react";
-import { connect } from "react-redux";
-import { follow, setCurrentPage, setUsers, unfollow, toggleIsFetching } from "../../redux/users-reducer";
-// import { setTotalUsersCount } from "../../redux/users-reducer";
-import * as axios from "axios";
-import Users from "./Users";
-import Preloader from "../Common/Preloader";
+import React from 'react';
+import { connect } from 'react-redux';
+import { follow, setCurrentPage, setUsers, unfollow, toggleIsFetching } from '../../redux/users-reducer';
+// import { setTotalUsersCount } from '../../redux/users-reducer';
+import * as axios from 'axios';
+import Users from './Users';
+import Preloader from '../Common/Preloader';
 
 class UsersContainer extends React.Component {
    componentDidMount() {

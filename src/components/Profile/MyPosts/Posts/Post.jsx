@@ -1,6 +1,6 @@
-import React from "react"
+import React from 'react';
 import s from './Post.module.css';
-import userPhoto from '../../../../assets/images/avatar.png'
+import userPhoto from '../../../../assets/images/avatar.png';
 
 
 const Post = (props) => {
@@ -16,4 +16,4 @@ const Post = (props) => {
    )
 }
 
-export default Post
+export default Post;
