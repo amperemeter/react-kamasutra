@@ -31,22 +31,30 @@ let Users = (props) => {
                            <img src={u.photos.small != null ? u.photos.small : userPhoto} alt="" className={s.image} />
                         </NavLink>
                         {!u.followed
-                           ? <button onClick={() => {
-                              followAPI.setFollow(u.id)
-                                 .then(data => {
-                                    if (data.resultCode === 0) {
-                                       props.follow(u.id)
-                                    }
-                                 })
-                           }}>Follow</button>
-                           : <button onClick={() => {
-                              unfollowAPI.setUnollow(u.id)
-                                 .then(data => {
-                                    if (data.resultCode === 0) {
-                                       props.unfollow(u.id)
-                                    }
-                                 })
-                           }}>Unfollow</button>
+                           ? <button
+                              disabled={props.followingInProgress.some(id => id === u.id)}
+                              onClick={() => {
+                                 props.toggleFollowingProgress(true, u.id);
+                                 followAPI.setFollow(u.id)
+                                    .then(data => {
+                                       if (data.resultCode === 0) {
+                                          props.follow(u.id)
+                                       }
+                                       props.toggleFollowingProgress(false, u.id);
+                                    })
+                              }}>Follow</button>
+                           : <button
+                              disabled={props.followingInProgress.some(id => id === u.id)}
+                              onClick={() => {
+                                 props.toggleFollowingProgress(true, u.id);
+                                 unfollowAPI.setUnollow(u.id)
+                                    .then(data => {
+                                       if (data.resultCode === 0) {
+                                          props.unfollow(u.id)
+                                       }
+                                       props.toggleFollowingProgress(false, u.id);
+                                    })
+                              }}>Unfollow</button>
                         }
 
                      </div>
