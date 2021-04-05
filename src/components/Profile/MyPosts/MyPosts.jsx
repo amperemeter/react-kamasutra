@@ -32,7 +32,7 @@ const MyPosts = (props) => {
          <div>
             <button onClick={onAddPost}>Add post</button>
          </div>
-         <div>
+         <div className={s.new_posts}>
             New posts
             {postElements}
          </div>

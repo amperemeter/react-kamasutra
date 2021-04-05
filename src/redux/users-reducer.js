@@ -81,14 +81,13 @@ export const getUsers = (currentPage, pageSize) => {
    return (dispatch) => {
       toggleIsFetching(true);
 
-      usersAPI.getUsers(currentPage, pageSize).then(data => {
+      usersAPI.getUsers(currentPage, pageSize).then(response => {
          // dispatch(setTotalUsersCount(data.totalCount));
          dispatch(toggleIsFetching(false));
-         dispatch(setUsers(data.items));
+         dispatch(setUsers(response.data.items));
       })
    }
 }
-
 
 export const follow = (userId) => {
    return (dispatch) => {
