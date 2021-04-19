@@ -1,8 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-import { withRouter } from "react-router";
+import { Route } from 'react-router-dom';
 import { connect } from "react-redux";
-import { compose } from 'redux';
 import { getAuthUserData } from './redux/auth-reducer';
 import Menu from './components/Menu/Menu';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
@@ -18,36 +16,30 @@ class App extends React.Component {
   }
   render() {
     return (
-      <BrowserRouter>
-        <div className="app-wrapper">
-          <HeaderContainer />
-          <Menu />
-          <main className="app-content">
-            <Route
-              path="/profile/:userId?"
-              render={() => <ProfileContainer />}
-            />
-
-            <Route
-              path="/dialogs"
-              render={() => <DialogsContainer />}
-            />
-
-            <Route
-              path="/users"
-              render={() => <UsersContainer />}
-            />
-            <Route
-              path="/login"
-              render={() => <Login />}
-            />
-          </main>
-        </div>
-      </BrowserRouter>
+      <div className="app-wrapper">
+        <HeaderContainer />
+        <Menu />
+        <main className="app-content">
+          <Route
+            path="/profile/:userId?"
+            render={() => <ProfileContainer />}
+          />
+          <Route
+            path="/dialogs"
+            render={() => <DialogsContainer />}
+          />
+          <Route
+            path="/users"
+            render={() => <UsersContainer />}
+          />
+          <Route
+            path="/login"
+            render={() => <Login />}
+          />
+        </main>
+      </div>
     );
   }
 }
 
-export default compose(
-  withRouter,
-  connect(null, { getAuthUserData }))(App);
+export default connect(null, { getAuthUserData })(App);
