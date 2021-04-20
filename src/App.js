@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import { connect } from "react-redux";
-import { getAuthUserData } from './redux/auth-reducer';
+import { initializeApp } from './redux/app-reducer';
 import Menu from './components/Menu/Menu';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
@@ -9,12 +9,17 @@ import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Login from './components/Login/Login';
 import './App.css';
+import Preloader from './components/Common/Preloader';
 
 class App extends React.Component {
   componentDidMount() {
-    this.props.getAuthUserData();
+    this.props.initializeApp();
   }
   render() {
+    if (!this.props.initialized) {
+      return <Preloader />
+    }
+
     return (
       <div className="app-wrapper">
         <HeaderContainer />
@@ -42,4 +47,8 @@ class App extends React.Component {
   }
 }
 
-export default connect(null, { getAuthUserData })(App);
+const mapStateToProps = (state) => ({
+  initialized: state.app.initialized
+})
+
+export default connect(mapStateToProps, { initializeApp })(App);
