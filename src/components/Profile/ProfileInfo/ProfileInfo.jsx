@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import s from "./ProfileInfo.module.css";
 import userCover from "../../../assets/images/offset.jpg";
 import userImg from "../../../assets/images/avatar.png";
