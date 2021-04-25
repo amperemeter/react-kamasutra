@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { withAuthRedirect } from '../hoc/withAuthRedirect';
 import { compose } from "redux";
 import { getUserProfile, getUserStatus, updateUserStatus } from "../../redux/profile-reducer";
 import Profile from "../Profile/Profile";
@@ -40,6 +39,5 @@ export default compose(
          getUserStatus,
          updateUserStatus
       }),
-   withRouter,
-   withAuthRedirect
+   withRouter
 )(ProfileContainer);
