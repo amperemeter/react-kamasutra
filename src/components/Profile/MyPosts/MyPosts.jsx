@@ -3,6 +3,8 @@ import Post from './Posts/Post';
 import s from './MyPosts.module.css';
 
 const MyPosts = React.memo(props => {
+   let action = props.updateNewPostText("Hello!");
+   console.log(action);
 
    let postElements = props.posts.map(p =>
       <Post key={p.id} message={p.message} likesCount={p.likesCount} />
