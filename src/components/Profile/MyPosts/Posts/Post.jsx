@@ -3,14 +3,14 @@ import s from './Post.module.css';
 import userPhoto from '../../../../assets/images/avatar.png';
 
 
-const Post = (props) => {
+const Post = ({ message, likesCount }) => {
 
    return (
       <div className={s.item}>
          <img src={userPhoto} alt="" />
-         <div>{props.message}</div>
+         <div>{message}</div>
          <div>
-            <span>{props.likesCount}</span>
+            <span>{likesCount}</span>
          </div>
       </div>
    )

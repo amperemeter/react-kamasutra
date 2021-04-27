@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Messages = (props) => {
+const Messages = ({ message }) => {
    return (
-      <div className="message">{props.message}</div>
+      <div className="message">{message}</div>
    )
 }
 
