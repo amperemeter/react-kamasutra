@@ -8,15 +8,9 @@ export const instance = axios.create({
    }
 });
 
-export const usersAPI = {
-   getUsers(currentPage = 1, pageSize = 5) {
-      return instance.get(`users?page=${currentPage}&count=${pageSize}`);
-   },
-   follow(userId) {
-      return instance.post(`follow/${userId}`);
-   },
-   unfollow(userId) {
-      return instance.delete(`follow/${userId}`);
+export const authAPI = {
+   me() {
+      return instance.get('auth/me');
    },
 }
 
@@ -32,8 +26,14 @@ export const profileAPI = {
    },
 }
 
-export const authAPI = {
-   me() {
-      return instance.get('auth/me');
+export const usersAPI = {
+   getUsers(currentPage = 1, pageSize = 5) {
+      return instance.get(`users?page=${currentPage}&count=${pageSize}`);
+   },
+   follow(userId) {
+      return instance.post(`follow/${userId}`);
+   },
+   unfollow(userId) {
+      return instance.delete(`follow/${userId}`);
    },
 }
