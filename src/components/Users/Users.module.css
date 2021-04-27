@@ -14,10 +14,6 @@
    grid-template-columns: 1fr 1fr;
 }
 
-.pages span {
+button {
    cursor: pointer;
-}
-
-.selected {
-   font-weight: 700;
 }

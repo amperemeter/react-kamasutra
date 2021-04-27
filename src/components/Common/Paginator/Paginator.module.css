@@ -1,0 +1,26 @@
+.pages {
+   padding: 20px;
+   display: flex;
+}
+
+.pages span {
+   width: 30px;
+   height: 30px;
+   margin-right: 5px;
+   border-radius: 3px;
+   font-size: 18px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: #eee;
+   cursor: pointer;
+   -webkit-border-radius: 3px;
+   -moz-border-radius: 3px;
+   -ms-border-radius: 3px;
+   -o-border-radius: 3px;
+}
+
+.pages span:hover, .pages span.selected {
+   background: tomato;
+   color: white
+}
