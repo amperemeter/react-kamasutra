@@ -1,4 +1,5 @@
 import { usersAPI } from '../api/api';
+import { updateObjectInArray } from '../utils/object-helpers';
 
 // const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
 const SET_USERS = 'users/SET_USERS';
@@ -31,23 +32,13 @@ const usersReducer = (state = initialState, action) => {
       case FOLLOW:
          return {
             ...state,
-            users: state.users.map(u => {
-               if (u.id === action.userID) {
-                  return { ...u, followed: true };
-               }
-               return u;
-            })
+            users: updateObjectInArray(state.users, action.userID, "id", { followed: true }),
          }
 
       case UNFOLLOW:
          return {
             ...state,
-            users: state.users.map(u => {
-               if (u.id === action.userID) {
-                  return { ...u, followed: false };
-               }
-               return u;
-            })
+            users: updateObjectInArray(state.users, action.userID, "id", { followed: false }),
          }
 
       case SET_CURRENT_PAGE:
