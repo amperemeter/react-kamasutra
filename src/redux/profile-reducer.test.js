@@ -8,17 +8,16 @@ let state = {
 }
 
 it('new post should be added', () => {
-   let action = () => {
-      updateNewPostText("Hello!")
-      addPost();
-   }
-   let newState = profileReducer(state, action);
+   let updateAction = updateNewPostText("Hello!");
+   let addPostAction = addPost();
+   let newState = profileReducer(state, updateAction);
+   newState = profileReducer(newState, addPostAction);
    expect(newState.posts.length).toBe(2);
 });
 
 
 it('after deleting length of messages should be added decrement', () => {
-   let action = deletePost(1);
-   let newState = profileReducer(state, action);
+   let deletePostAction = deletePost(1);
+   let newState = profileReducer(state, deletePostAction);
    expect(newState.posts.length).toBe(0);
 });
