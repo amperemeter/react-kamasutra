@@ -3,18 +3,12 @@ import Paginator from "../Common/Paginator/Paginator";
 import User from "./User";
 
 let Users = (props) => {
-   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
-   let pages = [];
-   for (let i = 1; i <= pagesCount; i++) {
-      pages.push(i);
-   }
-
    return (
       <div>
          <Paginator
+            totalItemsCount={props.totalUsersCount}
             currentPage={props.currentPage}
             onPageChanged={props.onPageChanged}
-            totalUsersCount={props.totalUsersCount}
             pageSize={props.pageSize}
          />
          {

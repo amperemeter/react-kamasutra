@@ -24,3 +24,7 @@
    background: tomato;
    color: white
 }
+
+.pages button.prev {
+   margin-right: 5px;
+}
