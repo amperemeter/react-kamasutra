@@ -4,6 +4,9 @@ import { Route, withRouter } from 'react-router-dom';
 import { connect } from "react-redux";
 import { compose } from 'redux';
 import { initializeApp } from './redux/app-reducer';
+import store from './redux/redux-store'
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 import Menu from './components/Menu/Menu';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
@@ -52,7 +55,21 @@ const mapStateToProps = (state) => ({
   initialized: state.app.initialized,
 })
 
-export default compose(
+const AppContainer = compose(
   withRouter,
   connect(mapStateToProps, { initializeApp })
 )(App);
+
+const MainApp = props => {
+  return (
+    <React.StrictMode>
+      <Provider store={store}>
+        <BrowserRouter>
+          <AppContainer />
+        </BrowserRouter>
+      </Provider>
+    </React.StrictMode>
+  )
+};
+
+export default MainApp;

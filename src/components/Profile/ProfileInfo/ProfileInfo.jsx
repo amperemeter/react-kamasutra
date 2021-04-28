@@ -3,7 +3,7 @@ import s from "./ProfileInfo.module.css";
 import userCover from "../../../assets/images/offset.jpg";
 import userImg from "../../../assets/images/avatar.png";
 import Preloader from "../../Common/Preloader";
-import ProfileStatusWithHooks from "./ProfileStatusWithHooks"
+import ProfileStatusWithHooks from "./ProfileStatus/ProfileStatusWithHooks"
 
 const ProfileInfo = ({ profile, ...props }) => {
    if (!profile) {
