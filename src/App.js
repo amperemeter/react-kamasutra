@@ -1,19 +1,20 @@
-import './App.css';
-import React from 'react';
-import { Route, withRouter } from 'react-router-dom';
+import "./App.css";
+import React from "react";
+import store from "./redux/redux-store"
+import { Route, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { compose } from 'redux';
-import { initializeApp } from './redux/app-reducer';
-import store from './redux/redux-store'
-import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
-import Menu from './components/Menu/Menu';
-import DialogsContainer from './components/Dialogs/DialogsContainer';
-import UsersContainer from './components/Users/UsersContainer';
-import ProfileContainer from './components/Profile/ProfileContainer';
-import HeaderContainer from './components/Header/HeaderContainer';
-import Login from './components/Login/Login';
-import Preloader from './components/Common/Preloader';
+import { compose } from "redux";
+import { initializeApp } from "./redux/app-reducer";
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
+import Menu from "./components/Menu/Menu";
+import ProfileContainer from "./components/Profile/ProfileContainer";
+// import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import UsersContainer from "./components/Users/UsersContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
+import Login from "./components/Login/Login";
+import Preloader from "./components/Common/Preloader";
+const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"));
 
 class App extends React.Component {
   componentDidMount() {
@@ -29,22 +30,24 @@ class App extends React.Component {
         <HeaderContainer />
         <Menu />
         <main className="app-content">
-          <Route
-            path="/profile/:userId?"
-            render={() => <ProfileContainer />}
-          />
-          <Route
-            path="/dialogs"
-            render={() => <DialogsContainer />}
-          />
-          <Route
-            path="/users"
-            render={() => <UsersContainer />}
-          />
-          <Route
-            path="/login"
-            render={() => <Login />}
-          />
+          <React.Suspense fallback={<Preloader />}>
+            <Route
+              path="/profile/:userId?"
+              render={() => <ProfileContainer />}
+            />
+            <Route
+              path="/dialogs"
+              render={() => <DialogsContainer />}
+            />
+            <Route
+              path="/users"
+              render={() => <UsersContainer />}
+            />
+            <Route
+              path="/login"
+              render={() => <Login />}
+            />
+          </React.Suspense>
         </main>
       </div>
     );
@@ -60,7 +63,7 @@ const AppContainer = compose(
   connect(mapStateToProps, { initializeApp })
 )(App);
 
-const MainApp = props => {
+const MainApp = () => {
   return (
     <React.StrictMode>
       <Provider store={store}>
