@@ -47,3 +47,9 @@ export const usersAPI = {
       return instance.delete(`follow/${userId}`);
    },
 }
+
+export const securityAPI = {
+   getCaptchaUrl() {
+      return instance.get('security/get-captcha-url');
+   }
+}
