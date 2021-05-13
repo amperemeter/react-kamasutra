@@ -3,6 +3,15 @@ import { connect } from "react-redux";
 import { getCaptchaUrl } from "../../redux/auth-reducer";
 import Login from "./Login";
 
+// const LoginContainer = (props) => {
+//    useEffect(() => {
+//       props.getCaptchaUrl();
+//    }, []);
+//    return <>
+//       <Login {...props} />
+//    </>
+// }
+
 class LoginContainer extends React.Component {
    componentDidMount() {
       // this.props.getCaptchaUrl();
