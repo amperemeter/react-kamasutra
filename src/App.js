@@ -12,7 +12,7 @@ import ProfileContainer from "./components/Profile/ProfileContainer";
 // import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
-import Login from "./components/Login/Login";
+import LoginContainer from "./components/Login/LoginContainer";
 import Preloader from "./components/Common/Preloader";
 const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"));
 
@@ -47,7 +47,7 @@ class App extends React.Component {
               />
               <Route
                 path="/login"
-                render={() => <Login />}
+                render={() => <LoginContainer />}
               />
               <Route
                 path="*"
